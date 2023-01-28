@@ -33,8 +33,12 @@ namespace TU_Challenge
         }
 
         public static string Reverse(string a)
+            
         {
-            throw new NotImplementedException();
+            char[] charArray = a.ToCharArray();
+            Array.Reverse(charArray);
+            a = new string(charArray);
+            return a;
         }
 
         public static string ToCesarCode(string input, int offset)
@@ -44,7 +48,11 @@ namespace TU_Challenge
 
         public static string ToLowerCase(string a)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < a.Length; i++)
+            {
+               if (a[i] >= 65 && a[i] <= 90) { a[i] += 32; }
+            }
+            return a;
         }
 
         public static string UnBazardString(string input)
@@ -54,7 +62,16 @@ namespace TU_Challenge
 
         public static string Voyelles(string a)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < a.Length; i++)
+            {
+                char currentChar = a[i];
+                if (!(currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u' || currentChar == 'A' || currentChar == 'E' || currentChar == 'I' || currentChar == 'O' || currentChar == 'U'))
+                {
+                    a = a.Remove(i, 1);
+                    i--;
+                }
+            }
+            return a;
         }
     }
 }

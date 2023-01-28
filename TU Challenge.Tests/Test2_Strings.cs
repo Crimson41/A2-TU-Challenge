@@ -89,7 +89,7 @@ namespace TU_Challenge.Tests
         }
 
         /// Opération inverse au BazardString
-        [TestCase("HloolelWrd", "HelloWorld")]
+        [TestCase("Hlool ", "HelloWorld")]
         public void UnBazardString(string input, string expected)
         {
             string result = MyStringImplementation.UnBazardString(input);
